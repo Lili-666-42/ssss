@@ -1,0 +1,36 @@
+{% extends 'frontend/base.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="{% static 'script.js' %}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+</head>
+
+<body>
+    
+    <h3>хуйнечки пользователя с именем "{{username}}"</h3>
+    <br>
+    <div class="content">
+        {% for obj in objects %}
+        {% if obj.image %}
+        <div class="container">
+            <a href="{% url 'art' art_id=obj.pk %}">
+                <img src="{{ obj.image.url }}"></a>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+
+</body>
+</html>
+
+<script>
+document.getElementById("sub").addEventListener("click", uploadImage);
+</script>
+{% endblock %}

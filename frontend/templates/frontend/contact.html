@@ -1,0 +1,92 @@
+{% extends 'frontend/base.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="{% static 'script.js' %}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+</head>
+
+<body>
+
+    {% if not flag %}
+    <form method="post" enctype="multipart/form-data" id="uploadForm">
+        {% csrf_token %}
+        <div class="boss">
+            <div class='text'>
+                Что такое Lorem Ipsum?
+                Что такое Lorem Ipsum?
+                Что такое Lorem Ipsum?
+                Что такое Lorem Ipsum?
+            </div>
+            <div class="upload-container">
+                <input type="file" name="fileToUpload" id="fileToUpload" onchange="previewImage()">
+                <img id="thumbnail" style="max-height: 300px">
+                <h3> {{pred}}</h3>
+                <p>Click or Drag & Drop to Upload</p>
+                <div class="loader"></div>
+            </div>
+            <div class="buttons">
+                <div class="bt">
+                    <p>Хуйня 1</p>
+                    <label for="checkbox" class="toggle">
+                        <input type="checkbox" id="checkbox" name="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <br>
+                <div class="bt">
+                    <p> Хуйня 2</p>
+                    <label for="checkbox2" class="toggle">
+                        <input type="checkbox" id="checkbox2" name="checkbox2">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <br>
+                <button id="sub" type="submit" class="popup-button" name="submit_button">Submit</button>
+            </div>
+        </div>
+    </form>
+    {% endif %}
+
+    <div id="res" class="res">
+        <br>
+        {% if im.image %}
+        <img src="{{ im.image.url }}">
+        {% endif %}
+    </div>
+
+    {% if flag %}
+    <div class="upload-container">
+        <h3>{{pred}}</h3>
+    </div>
+    {% endif %}
+
+    <h3>{{limit_value}}</h3>
+    <h3>Ваши хуйнечки</h3>
+
+    <br>
+    <div class="content">
+        {% for obj in objects %}
+        {% if obj.image %}
+        <div class="container">
+            <a href="{% url 'art' art_id=obj.pk %}">
+                <img src="{{ obj.image.url }}"></a>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+</body>
+</html>
+
+
+
+<script>
+document.getElementById("sub").addEventListener("click", uploadImage);
+</script>
+{% endblock %}

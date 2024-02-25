@@ -1,0 +1,53 @@
+{% extends 'frontend/base.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+</head>
+<body>
+
+    <div class="boss13">Registration
+    <form class = "reg" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Register</button>
+    </form>
+    </div>
+
+</body>
+
+<style>
+    .reg input[type="text"],
+    .reg input[type="password"],
+    .reg input[type="email"] {
+        width: 40%;
+        padding: 5px;
+        border: 0 solid #ccc;
+        border-radius: 12px;
+    }
+    .reg button[type="submit"] {
+        width: 30%;
+        padding: 5px;
+        border: 0 solid ;
+        border-radius: 12px;
+        background-color: #992727;
+        cursor: pointer;
+        margin: 0 auto;
+    }
+    .reg button[type="submit"]:hover {
+        background-color: #320707;
+    }
+    .boss13{
+        margin-left: 50px;
+        width: 50%;
+    }
+
+</style>
+
+
+
+</html>
+{% endblock %}

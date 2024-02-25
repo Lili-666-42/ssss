@@ -1,0 +1,57 @@
+{% extends 'frontend/base.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles2.css' %}">
+    <script src="{% static 'script2.js' %}"></script>
+</head>
+
+<body>
+
+<div class="boss">
+    <h1>GLORIYA HUIfgvhbjnkml,;./'</h1>
+</div>
+
+<div class="boss3">
+
+<div id="image-comparison">
+    <img src="{% static 'im/qq.jpg' %}" width="700", height="350" >
+    <img src="{% static 'im/ww.jpg' %}" width="700", height="350">
+</div>
+
+<div class="text">
+    <p>
+        <h4>Китли</h4>
+        Китли (англ. Keighley /ˈkiːθli/ ) — город, а также административный участок муниципального района Брадфорд в Уэст-Йоркшире, Англия. Он расположен почти в 20 километрах от города Брадфорд и стоит на месте слияния двух рек — Эйр и Ворт. Город является третьим по числу жителей административным районом в Англии. Также Китли относится к исторической области, именуемой «Графством Бронте».
+    </p>
+    <div class="two">
+    <a type= "submit" class = "butmain" href="{% url 'register' %}">Зарегаться</a>
+    <a type= "submit"  class = "butmain" href="{% url 'login' %}">Залогиниться</a>
+</div>
+</div>
+
+</div>
+
+<div class="boss5">
+    <div class="co" style="color: antiquewhite;">
+        {% for obj in object %}
+        {{obj.id}}
+         <a href="{% url 'show' user_id=obj.id %}">{{obj}}</a>
+        {% endfor %}
+    </div>
+</div>
+
+
+<script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+   imageComparison("#image-comparison");
+</script>
+</body>
+</html>
+
+{% endblock %}

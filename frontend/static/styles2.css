@@ -1,0 +1,122 @@
+.two{
+    display: flex;
+    margin-left: -12px;
+}
+.butmain {
+display: flex;
+width: 200px;
+height: 40px;
+background-color: #fa7900;
+border: none;
+color: rgb(29, 29, 29);
+text-align: center;
+align-items: center; 
+justify-content: center;
+text-decoration: none;
+font-size: 20px;
+margin: 12px 12px;
+cursor: pointer;
+transition: background-color 0.6s ease;
+opacity: 80%;
+}
+
+.butmain:hover {
+background-color: #a75406; /* Зеленый цвет */
+}
+
+body{
+background-color:rgb(29, 39, 37);
+}
+.boss, .boss3, .boss5 {
+background-color:rgb(57, 77, 72);
+box-shadow: 0 -6px 6px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.2);box-shadow: 0 -6px 6px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.2);
+color: rgb(255, 255, 255); /* Цвет элемента по умолчанию */
+transition: color 0.6s ease; /* Плавный переход для изменения цвета */
+transition: background-color 0.6s ease;
+display: flex;
+
+}
+
+.boss{
+    justify-content: center; /* Выравнивание по горизонтали */
+    align-items: center; /* Выравнивание по вертикали */
+    height: 120px;
+}
+
+.boss5{
+margin-top: 30px;
+margin-bottom: 30px;
+height: 100px;
+justify-content: center; /* Выравнивание по горизонтали */
+align-items: center; /* Выравнивание по вертикали */
+}
+.boss3 {
+margin-top: 30px;
+padding-top: 4px;
+padding-bottom: 4px;
+padding-left: 32px;
+}
+
+.boss:hover, .boss3:hover,  .boss5:hover{
+color: #fa7900;
+background-color: rgb(90, 108, 104);; /* Новый цвет фона при наведении */
+}
+
+.text{
+padding-left: 100px;
+width: 40%;
+}
+.image-comparison {
+position: relative;
+display: inline-block;
+width: 100%;
+max-width: 520px;
+overflow: hidden;
+}
+
+.image-comparison__before {
+position: absolute;
+width: 50%;
+overflow: hidden;
+}
+
+.image-comparison__image {
+display: block;
+}
+
+/* Ползунок */
+.image-comparison__slider {
+padding: 0;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 2px;
+height: 100%;
+cursor: col-resize;
+outline: none;
+border: none;
+}
+
+/* Стрелки */
+.image-comparison__slider::before {
+content: "";
+position: absolute;
+top: calc(50% - 15px);
+left: -14px;
+width: 30px;
+height: 30px;
+border-radius: 50%;
+background: transparent url("./img/arrows.png") no-repeat center;
+border: 2px solid #fff;
+background-size: 90%;
+}
+
+.image-comprison__slider:hover,
+.image-comprison__slider:focus,
+.image-comprison__slider:hover::before,
+.image-comprison__slider:focus::before {
+background-color: #ccc;
+outline: none;
+border: none;
+}

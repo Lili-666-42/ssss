@@ -1,0 +1,270 @@
+input[type="checkbox"] {
+    display: none;
+}
+
+.text{
+    color: #ffffff;
+    width: 20%;
+}
+
+
+.loader-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader {
+    border: 8px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 8px solid #3498db;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.boss1{
+
+    height: 100px;
+}
+
+
+.content {
+    display: flex;
+    align-items: center; 
+    flex-wrap: wrap; /* Позволят элементам переноситься на новую строку */
+    justify-content: center;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+
+.boss { 
+    height: 300px;
+    display: flex;
+    justify-content: center; 
+  }
+
+.res {
+    background-color: rgb(44, 55, 52);
+    margin: 0; /* Устанавливаем отступы в 0 */
+    padding: 0; /* Устанавливаем поля в 0 */
+    display: flex; /* Устанавливаем контейнер как flex-контейнер */
+    justify-content: center; /* Центрируем содержимое по горизонтали */
+}
+p{
+    color: #fff;
+}
+.res img {
+    max-width: 50%;
+    height: auto;
+}
+
+.toggle .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.toggle {
+
+    margin-left: 30%;
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+
+}
+
+.toggle .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 34px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="checkbox"]:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+input[type="checkbox"]:checked + .slider {
+    background-color: #3e1310;
+
+}
+
+
+.container {
+    width: 200px;
+    height: 200px;
+    margin: 15px;
+    display: inline-block;
+    transition: transform 0.3s; 
+}
+.container img {
+    width: 100%; /* Изображение заполняет всю ширину контейнера */
+    height: 100%; /* Изображение заполняет всю высоту контейнера */
+    object-fit: cover; /* Изображение подстраивается под размер контейнера, сохраняя пропорции, и обрезается, чтобы заполнить его полностью */
+    object-position: center; /* Изображение будет располагаться по центру контейнера */
+    transition: transform 0.3s; 
+}
+
+.container:hover img {
+    transform: scale(1.05); /* Уменьшаем размер изображения при наведении */
+}
+.container:hover {
+    transform: scale(1.05); /* Уменьшаем размер изображения при наведении */
+}
+
+.upload-container input[type="file"] {
+position: absolute;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+opacity: 0;
+cursor: pointer;
+}
+  
+/* Стили для текста внутри рамки */
+.upload-container p {
+    margin: 0;
+    padding-top: 80px;
+    font-size: 16px;
+    color: #555;
+}
+
+/* Стили для изменения рамки при наведении */
+.upload-container:hover {
+    border-color: #666;
+}
+
+
+h3 {
+    color:#fff;
+    display: flex;
+    justify-content: center;
+}
+.buttons {
+    
+    width: 20%;
+    height: 50%;
+    background-color: rgb(25, 28, 27);
+    margin: 0%  4%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px; 
+    padding: 2%;
+  }
+  
+  
+.upload-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0%;
+    margin-left: 5%;
+    width: 45%;
+    height: auto;
+    border: 2px dashed #aaa;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden; /* Обрезаем изображение, которое выходит за пределы рамки */
+    position: relative; /* Необходимо для позиционирования загруженного изображения */
+}
+
+/* Стили для загруженного изображения */
+.upload-container img {
+    max-width: none; /* Отменяем ограничение максимальной ширины */
+    max-height: none; /* Отменяем ограничение максимальной высоты */
+    width: 100%; /* Автоматический размер по ширине */
+    height: auto; /* Автоматический размер по высоте */
+    object-fit: cover; /* Обрезаем изображение, чтобы оно точно соответствовало рамке */
+    object-position: center; 
+    position: absolute; /* Позиционируем изображение внутри контейнера */
+    top: 50%; /* Размещаем изображение по вертикали по центру контейнера */
+    left: 50%; /* Размещаем изображение по горизонтали по центру контейнера */
+    transform: translate(-50%, -50%); /* Центрируем изображение по вертикали и горизонтали */
+    transition: transform 0.3s; 
+    opacity: 80%;/* Добавляем плавное анимирование изменения размеров изображения */
+}
+
+.upload-container p {
+    margin: 0;
+    padding-top: 30%;
+    font-size: 16px;
+    color: #555;
+}
+
+.upload-container:hover {
+    border-color: #666;
+}
+
+
+
+.popup-button {
+    padding: 5% 10%;
+    background-color: #610e0e;
+    color: white;
+    border: none;
+    border-radius: 20px; /* Делаем кнопку закругленной */
+    cursor: pointer;
+    outline: none; /* Убираем рамку фокуса */
+    transition: background-color 0.3s ease; 
+}
+
+.popup-button:hover {
+    background-color: #2c0905; /* Изменяем цвет при наведении */
+}
+
+.bt{
+    display: flex;
+    justify-content: space-between;
+    border-radius: 20px; 
+    background-color: rgb(48, 50, 49);
+    align-items: center;
+}
+
+.bt p{
+    margin: 0; 
+    padding-left: 3%;
+}
+
+.footage{
+    height: 100px;
+}
+
+
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loader {
+
+    display: none;
+    border: 5px dashed #f3f3f3;
+    border-radius: 50%;
+    border-top: 12px solid #ec9427;
+    width: 80px;
+    height: 80px;
+    animation: spin 1s linear infinite;
+}
+
